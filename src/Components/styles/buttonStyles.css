@@ -1,0 +1,18 @@
+/* ButtonStyles.css */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #ff0000; /* Change this to your desired hover color */
+    color: #ffffff; /* Text color on hover */
+  }
+  

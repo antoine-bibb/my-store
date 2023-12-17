@@ -1,0 +1,79 @@
+/* Reviews.css */
+
+/* Customer Reviews container */
+.customer-review {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Customer Reviews heading */
+  .customer-reviews h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Review card style */
+  .review-card {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .review-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Review user and comment */
+  .review-card p {
+    margin: 0;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* Add Your Comment heading */
+  .add-comment-heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  /* Form input styles */
+  .add-comment-form {
+    margin-top: 10px;
+  }
+  
+  .add-comment-form input,
+  .add-comment-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-comment-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-comment-form button:hover {
+    background-color: #0056b3;
+  }
+  

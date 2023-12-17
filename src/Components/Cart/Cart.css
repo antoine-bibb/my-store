@@ -1,0 +1,76 @@
+/* Example styles for the CartPage component */
+.cart-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: .5px solid black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item {
+    display: flex;
+    margin-bottom: 20px;
+    
+  }
+  
+  .cart-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border:.5px solid black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .total-price {
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .pay-now-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: .25px solid black;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .pay-now-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Cart.css */
+
+/* Styles for payment section */
+.payment-section {
+    background-color: #f5f5f5; /* Background color for the payment section */
+    padding: 20px; /* Add padding for spacing inside the payment section */
+    margin-top: 20px; /* Add margin to separate from other elements */
+  }
+  
+  /* Styles for form labels */
+  .payment-section label {
+    display: block; /* Display form labels as block elements */
+    margin-bottom: 10px; /* Add margin at the bottom of each label */
+  }
+  
+  /* Styles for form inputs */
+  .payment-section input[type="text"] {
+    width: calc(100% - 20px); /* Set input width (adjust as needed) */
+    padding: 8px; /* Add padding to input fields */
+    margin-bottom: 10px; /* Add margin at the bottom of each input */
+  }
+  
+  /* Styles for buttons */
+  .payment-section button {
+    padding: 10px 20px; /* Add padding to buttons */
+    margin-top: 10px; /* Add margin at the top of buttons */
+  }
+  
