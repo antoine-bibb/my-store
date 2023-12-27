@@ -1,0 +1,66 @@
+/* ProductList.css */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .product-item {
+    background-color: #66666661;
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+  perspective: 1000px; /* Adding perspective for 3D effect */
+}
+.product-item:hover {
+  transform: translateY(-15px); /* Move the card slightly up on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase the shadow on hover */
+}
+  
+  .product-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .product-item:hover img {
+    transform: rotateX(-15deg) scale(1.25); /* Apply a rotation and scaling effect on hover */
+    transition: transform 0.5s ease; /* Add a smooth transition */
+  }
+  
+  .product-item h3 {
+    margin-top: 10px;
+  }
+  
+  .product-item p {
+    margin: 10px 0;
+      font-size: 14px;
+      color: #666;
+    }
+  
+/* Button styles */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: #f00;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f00;
+  color: white;
+}
+
+  /* Additional styles as needed */
+  

@@ -1,0 +1,83 @@
+/* NavBar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    position: sticky;
+    top:0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .logo h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    font-size: 18px;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffcc00;
+  }
+
+  .main-container {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* To push items apart on the horizontal axis */
+    align-items: center; /* To vertically center items */
+    padding: 10px; /* Adjust as needed */
+  }
+  
+  .cart {
+    margin-right: 80%; /* Pushes the cart to the far left */
+  }
+
+  .cart-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+  }
+  .cart-button:hover{
+    color: #ffcc00;
+  }
+  
+  .cart-items {
+    background-color: #ffcc00;
+    color: #333;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+  }
+  
+  .badge {
+    background-color: #ffcc00;
+    color: #333;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 16px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
