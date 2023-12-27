@@ -5,7 +5,7 @@ import users from "./data/users.js";
 import products from "./data/data.js";
 import User from "./models/userModel.js";
 import Order from "./models/orderModel.js";
-import Product from "./models/productModels.js";
+import Product from "./models/productModel.js";
 
 import connectDB from "./config/db.js";
 
