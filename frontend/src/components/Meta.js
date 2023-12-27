@@ -13,7 +13,7 @@ const Meta = ({ title, description, keywords }) => {
 Meta.defaultProps = {
   title: 'Welcome To JCFits',
   description: 'Just Casual Fits For Casual Days',
-  keywords: 'clothing','Casual','fits','streetwear','hoodies','joggers','sweats','sweatpants','pants',
+  keywords: 'Clothing, Fashion, Casual, Fits, Casual Fits',
 };
 
 export default Meta;
