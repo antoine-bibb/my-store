@@ -44,7 +44,7 @@ const OrderScreen = () => {
         paypalDispatch({
           type: 'resetOptions',
           value: {
-            'clientId': paypal.clientId,
+            'client-id': paypal.clientId,
             currency: 'USD',
           },
         });
@@ -70,7 +70,7 @@ const OrderScreen = () => {
     });
   }
 
-  // TESTING ONLY! REMOVE BEFORE PRODUCTION
+ // TESTING ONLY! REMOVE BEFORE PRODUCTION
   // async function onApproveTest() {
   //   await payOrder({ orderId, details: { payer: {} } });
   //   refetch();
@@ -226,7 +226,7 @@ const OrderScreen = () => {
                         onClick={onApproveTest}
                       >
                         Test Pay Order
-                      </Button> */}
+                      </Button>  */}
 
                       <div>
                         <PayPalButtons
