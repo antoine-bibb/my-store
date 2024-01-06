@@ -2,7 +2,7 @@ const products = [
     {
       name: "JCFits Black Hoodie",
       image:
-        "../public/images/black close up.png",
+        ["../images/black close up.png","../images/red close up .png","../images/grey full view.png"],
         description:
         "Pre-shrunk, pill-resistant fleece, seemless body, high stitch density",
       brand: "JcFits",
@@ -24,7 +24,7 @@ const products = [
     {
       name: "JCFits FavRed",
       image:
-        "../public/images/red close up .png",
+        "../images/red close up .png",
         description:
         "Pre-shrunk, pill-resistant fleece, seemless body, high stitch density",
       brand: "JcFits",

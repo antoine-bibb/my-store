@@ -72,19 +72,16 @@ const orderSchema = mongoose.Schema({
         paymentResult: {
             id: {
                 type: String,
-                required: [true, 'Please add an id']
             },
             status: {
                 type: String,
-                required: [true, 'Please add a status']
             },
             update_time: {
                 type: String,
-                required: [true, 'Please add a update_time']
+
             },
             email_address: {
                 type: String,
-                required: [true, 'Please add a email_address']
             },
         },
         itemPrice:{
