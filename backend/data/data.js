@@ -73,7 +73,7 @@ const products = [
   },
    {
     name: "JCFits University Hoodie",
-    image: "images/black close up.png",
+    image: "images/img_0807.png",
     description: "Pre-shrunk, pill-resistant fleece, seamless body, high stitch density",
     brand: "JcFits",
     category: "lifestyle",
@@ -91,7 +91,7 @@ const products = [
   },
    {
     name: "JCFits Black sweater",
-    image: "images/black close up.png",
+    image: "images/img_0804.png",
     description: "Pre-shrunk, pill-resistant fleece, seamless body, high stitch density",
     brand: "JcFits",
     category: "lifestyle",
@@ -104,12 +104,12 @@ const products = [
     details: "black/grey/yellow hoodie with vinyl design",
     gender: "Men",
     fit: "Adult",
-    size: ["XS", "S", "M", "L", "XL"],
+    size: {["XS", "S", "M", "L", "XL"]},
     material: "50% Cotton/50% Polyester",
   },
    {
     name: "JCFits Womens crop Hoodie",
-    image: "images/black close up.png",
+    image: "images/img_0811.png",
     description: "Pre-shrunk, pill-resistant fleece, seamless body, high stitch density",
     brand: "JcFits",
     category: "lifestyle",
@@ -122,7 +122,7 @@ const products = [
     details: "black/grey/yellow hoodie with vinyl design",
     gender: "Men",
     fit: "Adult",
-    size: ["XS", "S", "M", "L", "XL"],
+    size: [{"XS", "S", "M", "L", "XL"}],
     material: "50% Cotton/50% Polyester",
   },
 ];
