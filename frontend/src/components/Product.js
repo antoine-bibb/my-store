@@ -24,9 +24,18 @@ const Product = ({ product }) => {
         </Card.Text>
 
         <Card.Text as='h3'>${product.price}</Card.Text>
+
+        <Card.Text as='div'>
+          <strong>Available Sizes: </strong>
+          {product.size.map((size, index) => (
+            <span key={index} className='mx-1'>
+              {size}
+            </span>
+          ))}
+        </Card.Text>
       </Card.Body>
     </Card>
   );
 };
 
-export default Product; 
+export default Product;

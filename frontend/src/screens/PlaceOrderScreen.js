@@ -87,6 +87,10 @@ const PlaceOrderScreen = () => {
                             {item.name}
                           </Link>
                         </Col>
+                        <Row>
+      <Col>Size:</Col>
+      <Col>{item.size}</Col>
+    </Row>
                         <Col md={4}>
                           {item.qty} x ${item.price} = $
                           {(item.qty * (item.price * 100)) / 100}

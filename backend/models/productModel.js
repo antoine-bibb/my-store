@@ -1,92 +1,98 @@
-import mongoose from'mongoose';
+import mongoose from 'mongoose';
 
-const reviewSchema = mongoose.Schema({
-    user:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: [true, 'Please add a user']
+const reviewSchema = mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
     },
     name: {
-        type: String,
-        required: [true, 'Please add a name']
+      type: String,
+      required: true,
     },
     rating: {
-        type: Number,
-        required: [true, 'Please add a rating'],
-        min: 1,
-        max: 5
+      type: Number,
+      required: true,
+      min: 1,
+      max: 5,
     },
     comment: {
-        type: String,
-        required: [true, 'Please add a comment']
-    }
-},{
+      type: String,
+      required: true,
+    },
+  },
+  {
     timestamps: true,
+  }
+);
 
-});
-
-const productSchema = new mongoose.Schema({
-    user:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: [true, 'Please add a user']
+const productSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
     },
     name: {
-        type: String,
-        required: [true, 'Please add a name']
+      type: String,
+      required: true,
     },
     image: {
-        type: String,
-        required: [true, 'Please add an image']
+      type: String,
+      required: true,
     },
-    brand:{
-        type: String,
-        required: [true, 'Please add a brand']
+    brand: {
+      type: String,
+      required: true,
     },
-    category:{
-        type: String,
-        required: [true, 'Please add a category']
+    category: {
+      type: String,
+      required: true,
     },
-    description:{
-        type: String,
-        required: [true, 'Please add a description']
+    description: {
+      type: String,
+      required: true,
     },
-    reviews: [reviewSchema],
+    reviews: [reviewSchema], // Embedding reviews in the product schema
     rating: {
-        type: Number,
-        required: [true, 'Please add a rating'],
-        default: 0
+      type: Number,
+      required: true,
+      default: 0,
     },
     numReviews: {
-        type: Number,
-        required: [true, 'Please add a number of reviews'],
-        default: 0
+      type: Number,
+      required: true,
+      default: 0,
     },
-    price:{
-            type: Number,
-        required: [true, 'Please add a price'],
-        default: 0
+    price: {
+      type: Number,
+      required: true,
+      default: 0,
     },
-    countInStock:{
-        type: Number,
-        required: [true, 'Please add a count in stock'],
-        default: 0
+    countInStock: {
+      type: Number,
+      required: true,
+      default: 0,
     },
-    color:{
+    color: {
+      type: String,
+      required: true,
+      default: 'black',
+    },
+    size: [
+      {
         type: String,
-        required: [true, 'Please add a color'],
-        default: 'black'
-    },
-    size:{
-        type: String,
-        required: [true, 'Please add a size'],
-        default: 'xs'
-    }
-
-},{
+         required: true,  // Remove required if an empty array is allowed
+        default: 'xs',
+      },
+    ],
+  },
+  {
     timestamps: true,
-});
+  }
+);
 
-const product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 
-export default product;
+export default Product;

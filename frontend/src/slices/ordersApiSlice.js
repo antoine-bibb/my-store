@@ -1,6 +1,18 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import { apiSlice } from './apiSlice';
 import { ORDERS_URL, PAYPAL_URL } from '../constants';
-
+// Async Thunk to mark an order as delivered
+ const markOrderAsDelivered = createAsyncThunk(
+  'orders/markOrderAsDelivered',
+  async (orderId, { rejectWithValue }) => {
+    try {
+      const response = await orderApiSlice.endpoints.deliverOrder.initiate(orderId); // Using the existing 'deliverOrder' endpoint from orderApiSlice
+      return response.data; // Assuming response.data contains the updated order details
+    } catch (error) {
+      return rejectWithValue(error.response.data); // Assuming you handle errors appropriately in your service
+    }
+  }
+);
 export const orderApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createOrder: builder.mutation({
@@ -60,3 +72,4 @@ export const {
   useDeliverOrderMutation,
 } = orderApiSlice;
 
+export { markOrderAsDelivered }; // Exporting the new action creator

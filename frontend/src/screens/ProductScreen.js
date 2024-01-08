@@ -31,9 +31,10 @@ const ProductScreen = () => {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
+  const [selectedSize, setSelectedSize] = useState(["M"]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart({ ...product, qty }));
+    dispatch(addToCart({ ...product, qty, size: selectedSize }));
     navigate('/cart');
   };
 
@@ -121,7 +122,28 @@ const ProductScreen = () => {
                     </Row>
                   </ListGroup.Item>
                     
-
+                  <ListGroup.Item>
+                  <Row>
+  <Col>Size:</Col>
+  <Col>
+    {product && product.size && product.size.length > 0 ? (
+      product.size.map((sizeOption, index) => (
+        <Form.Check
+          key={index}
+          inline
+          label={sizeOption}
+          type='radio'
+          id={`size-${sizeOption}`}
+          checked={selectedSize === sizeOption}
+          onChange={(e) => setSelectedSize(sizeOption)}
+        />
+      ))
+    ) : (
+      <div>No Sizes Available</div>
+    )}
+  </Col>
+</Row>
+</ListGroup.Item>
                       
                   {/* Qty Select */}
                   {product.countInStock > 0 && (

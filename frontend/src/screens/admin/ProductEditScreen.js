@@ -21,7 +21,9 @@ const ProductEditScreen = () => {
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState('');
-
+  const [availableSizes, setAvailableSizes] = useState([]);
+  // Add the state to hold selected sizes
+  const [selectedSizes, setSelectedSizes] = useState([]);
   const {
     data: product,
     isLoading,
@@ -29,6 +31,13 @@ const ProductEditScreen = () => {
     error,
   } = useGetProductDetailsQuery(productId);
 
+  const handleSelectAll = (e) => {
+    if (e.target.checked) {
+      setSelectedSizes(availableSizes);
+    } else {
+      setSelectedSizes([]);
+    }
+  };
   const [updateProduct, { isLoading: loadingUpdate }] =
     useUpdateProductMutation();
 
@@ -67,6 +76,9 @@ const ProductEditScreen = () => {
       setCategory(product.category);
       setCountInStock(product.countInStock);
       setDescription(product.description);
+      setAvailableSizes(product.size || []);
+      // If the product already has sizes selected, set them in the state
+      setSelectedSizes(product.selectedSizes || []);
     }
   }, [product]);
 
@@ -151,6 +163,43 @@ const ProductEditScreen = () => {
                 onChange={(e) => setCountInStock(e.target.value)}
               ></Form.Control>
             </Form.Group>
+
+           
+
+         {/* Available Sizes */}
+        <Form.Group controlId='availableSizes'>
+          <Form.Label>Available Sizes</Form.Label>
+          {availableSizes.length > 0 ? (
+            availableSizes.map((sizeOption, index) => (
+              <Form.Check
+                key={index}
+                type='checkbox'
+                id={`size-${sizeOption}`}
+                label={sizeOption}
+                checked={selectedSizes.includes(sizeOption)}
+                onClick={(e) => {
+                  const size = e.target.value;
+                  const updatedSizes = selectedSizes.includes(sizeOption)
+                    ? selectedSizes.filter((s) => s !== size)
+                    : [...selectedSizes, size];
+                  setSelectedSizes(updatedSizes);
+                }}
+              />
+            ))
+          ) : (
+            <div>No Sizes Available</div>
+          )}
+        </Form.Group> 
+        
+        {/* Select All option */}
+        <Form.Group controlId='selectAllSizes'>
+          <Form.Check
+            type='checkbox'
+            label='Select All'
+            checked={selectedSizes.length === availableSizes.length}
+            onChange={handleSelectAll}
+          />
+        </Form.Group>
 
             <Form.Group controlId='category'>
               <Form.Label>Category</Form.Label>

@@ -44,7 +44,7 @@ const OrderScreen = () => {
         paypalDispatch({
           type: 'resetOptions',
           value: {
-            'client-id': paypal.clientId,
+            'clientId': paypal.clientId,
             currency: 'USD',
           },
         });
@@ -175,6 +175,10 @@ const OrderScreen = () => {
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>
+                      <Row>
+      <Col>Size:</Col>
+      <Col>{item.size}</Col>
+    </Row>
                     </ListGroup.Item>
                   ))}
                 </ListGroup>

@@ -54,6 +54,10 @@ const CartScreen = () => {
                     <Link to={`/product/${item._id}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
+                  <Row>
+      <Col>Size:</Col>
+      <Col>{item.size}</Col>
+    </Row>
                   <Col md={2}>
                     <Form.Control
                       as='select'

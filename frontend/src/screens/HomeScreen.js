@@ -19,13 +19,33 @@ const HomeScreen = () => {
 
   return (
     <>
-    <p>
-            Browse through our latest products.
-          </p>
-      {!keyword ? 
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: '50vh',
+        paddingBottom:'10px',
+        backgroundImage: `url('/logo512.png')`, // Corrected URL declaration
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        filter: 'grayscale(100%)',
+      }}></div>
+        <p style={{
+          fontSize: '24px',
+          fontWeight: 'bold',
+          color: 'red',
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
+          zIndex:50,
+        }}>
+          Browse through our latest products.
+        </p>
       
+  
+      {/* Rest of your code */}
+      {!keyword ? (
         <ProductCarousel />
-       : (
+      ) : (
         <Link to='/' className='btn btn-light mb-4'>
           Go Back
         </Link>
@@ -57,6 +77,6 @@ const HomeScreen = () => {
       )}
     </>
   );
-};
-
+  
+            }; 
 export default HomeScreen;

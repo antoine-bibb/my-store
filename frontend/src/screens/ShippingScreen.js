@@ -16,14 +16,14 @@ const ShippingScreen = () => {
   const [postalCode, setPostalCode] = useState(
     shippingAddress.postalCode || ''
   );
-  const [country, setCountry] = useState(shippingAddress.country || '');
+  
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShippingAddress({ address, city, state, postalCode, country })); // Included state in dispatch
+    dispatch(saveShippingAddress({ address, city, state, postalCode })); // Included state in dispatch
     navigate('/payment');
   };
 

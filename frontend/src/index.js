@@ -76,7 +76,7 @@ root.render(
   <React.StrictMode>
     <HelmetProvider>
       <Provider store={store}>
-        <PayPalScriptProvider deferLoading={false}>
+        <PayPalScriptProvider options={{"clientId": "test"}} deferLoading={false}>
           <RouterProvider router={router} />
         </PayPalScriptProvider>
       </Provider>

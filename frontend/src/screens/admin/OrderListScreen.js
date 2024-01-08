@@ -4,10 +4,17 @@ import { FaTimes } from 'react-icons/fa';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import { useGetOrdersQuery } from '../../slices/ordersApiSlice';
+import { useDispatch } from 'react-redux';
+import { markOrderAsDelivered } from '../../slices/ordersApiSlice';
 
 const OrderListScreen = () => {
+  const dispatch = useDispatch();
   const { data: orders, isLoading, error } = useGetOrdersQuery();
-
+  const handleDeliverOrder = (orderId) => {
+    // Dispatch an action to mark the order as delivered
+    dispatch(markOrderAsDelivered(orderId));
+    // After dispatching the action, the order state will update automatically
+  };
   return (
     <>
       <h1>Orders</h1>
@@ -48,8 +55,14 @@ const OrderListScreen = () => {
                   {order.isDelivered ? (
                     order.deliveredAt.substring(0, 10)
                   ) : (
-                    <FaTimes style={{ color: 'red' }} />
-                  )}
+                    <Button
+                  variant='primary'
+                  className='btn-sm'
+                  onClick={() => handleDeliverOrder(order._id)}
+                >
+                  Mark as Delivered
+                </Button>
+              )}
                 </td>
                 <td>
                   <LinkContainer to={`/order/${order._id}`}>
