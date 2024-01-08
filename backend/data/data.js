@@ -122,7 +122,7 @@ const products = [
     details: "black/grey/yellow hoodie with vinyl design",
     gender: "Men",
     fit: "Adult",
-    size: [{"XS", "S", "M", "L", "XL"}],
+    size: ["XS", "S", "M", "L", "XL"],
     material: "50% Cotton/50% Polyester",
   },
 ];
