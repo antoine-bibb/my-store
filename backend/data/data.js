@@ -55,7 +55,7 @@ const products = [
   },
    {
     name: "JCFits OG Hoodie",
-    image: "images/black close up.png",
+    image: "images/black_spec_front.png",
     description: "Pre-shrunk, pill-resistant fleece, seamless body, high stitch density",
     brand: "JcFits",
     category: "lifestyle",
@@ -122,7 +122,7 @@ const products = [
     details: "black/grey/yellow hoodie with vinyl design",
     gender: "Men",
     fit: "Adult",
-    size: [{"XS", "S", "M", "L", "XL"}],
+    size: ["XS", "S", "M", "L", "XL"],
     material: "50% Cotton/50% Polyester",
   },
 ];
