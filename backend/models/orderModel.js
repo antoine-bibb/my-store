@@ -2,11 +2,13 @@ import mongoose from 'mongoose';
 
 const orderSchema = mongoose.Schema(
   {
+    // Reference to the user who placed the order
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: 'User',
     },
+    // Array of items in the order
     orderItems: [
       {
         name: { type: String, required: true },
@@ -18,25 +20,29 @@ const orderSchema = mongoose.Schema(
           required: true,
           ref: 'Product',
         },
-        size: { type:String, required: true},
+        size: { type: String, required: true },
       },
     ],
+    // Shipping address details
     shippingAddress: {
       address: { type: String, required: true },
       city: { type: String, required: true },
       postalCode: { type: String, required: true },
       state: { type: String, required: true },
     },
+    // Payment method used for the order
     paymentMethod: {
       type: String,
       required: true,
     },
+    // Details of the payment result
     paymentResult: {
       _id: { type: String },
       status: { type: String },
       update_time: { type: String },
       email_address: { type: String },
     },
+    // Prices related to the order
     itemsPrice: {
       type: Number,
       required: true,
@@ -57,6 +63,7 @@ const orderSchema = mongoose.Schema(
       required: true,
       default: 0.0,
     },
+    // Whether the order has been paid
     isPaid: {
       type: Boolean,
       required: true,
@@ -65,6 +72,7 @@ const orderSchema = mongoose.Schema(
     paidAt: {
       type: Date,
     },
+    // Whether the order has been delivered
     isDelivered: {
       type: Boolean,
       required: true,
@@ -75,7 +83,7 @@ const orderSchema = mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically adds createdAt and updatedAt fields
   }
 );
 

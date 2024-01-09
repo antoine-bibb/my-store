@@ -84,7 +84,7 @@ const productSchema = new mongoose.Schema(
       {
         type: String,
          required: true,  // Remove required if an empty array is allowed
-        default: 'xs',
+        default: [],
       },
     ],
   },
