@@ -61,14 +61,22 @@ const OrderScreen = () => {
   function onApprove(data, actions) {
     return actions.order.capture().then(async function (details) {
       try {
-        await payOrder({ orderId, details }).unwrap;
-        refetch();
-        toast.success('Order is paid');
+        const response = await payOrder({ orderId, details });
+        if (response.error) {
+          toast.error(response.error?.message || 'Error while paying');
+        } else {
+          refetch();
+          toast.success('Order is paid');
+        }
       } catch (err) {
-        toast.error(err?.data?.message || err.error);
+        toast.error(
+          err?.data?.message || err?.error?.message || 'Error while paying'
+        );
       }
     });
   }
+  
+  
 
  // TESTING ONLY! REMOVE BEFORE PRODUCTION
   // async function onApproveTest() {
@@ -223,14 +231,14 @@ const OrderScreen = () => {
                   {isPending ? (
                     <Loader />
                   ) : (
-                    <div>
-                      {/* THIS BUTTON IS FOR TESTING! REMOVE BEFORE PRODUCTION! */}
-                      {/* <Button
-                        style={{ marginBottom: '10px' }}
-                        onClick={onApproveTest}
-                      >
-                        Test Pay Order
-                      </Button>  */}
+                   <div>
+                      {/* THIS BUTTON IS FOR TESTING! REMOVE BEFORE PRODUCTION! 
+                      <Button
+                      style={{ marginBottom: '10px' }}
+                      onClick={onApproveTest}
+                    >
+                      Test Pay Order
+                    </Button>  */}
 
                       <div>
                         <PayPalButtons

@@ -54,25 +54,31 @@ const CartScreen = () => {
                     <Link to={`/product/${item._id}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
-                  <Row>
-      <Col>Size:</Col>
-      <Col>{item.size}</Col>
-    </Row>
-                  <Col md={2}>
-                    <Form.Control
-                      as='select'
-                      value={item.qty}
-                      onChange={(e) =>
-                        addToCartHandler(item, Number(e.target.value))
-                      }
-                    >
-                      {[...Array(item.countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </Form.Control>
-                  </Col>
+                  <Row className="d-inline-block border border-light p-2 shadow-sm mb-2">
+                  
+  <Col md={4}>Size:</Col>
+  <Col>{item.size}</Col>
+</Row>
+{/* Separate the lines with a label */}
+<Row>
+ <Col md={2}>
+    <span>Quantity:</span>
+  
+  
+    <Form.Control
+      as='select'
+      value={item.qty}
+      onChange={(e) => addToCartHandler(item, Number(e.target.value))}
+    >
+      {/* Options for quantity */}
+      {[...Array(item.countInStock).keys()].map((x) => (
+        <option key={x + 1} value={x + 1}>
+          {x + 1}
+        </option>
+      ))}
+    </Form.Control>
+  </Col>
+</Row>
                   <Col md={2}>
                     <Button
                       type='button'
