@@ -31,7 +31,7 @@ const ProductScreen = () => {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
-  const [selectedSize, setSelectedSize] = useState(["M"]);
+  const [selectedSize, setSelectedSize] = useState([""]);
 
   const addToCartHandler = () => {
     dispatch(addToCart({ ...product, qty, size: selectedSize }));

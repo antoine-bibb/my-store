@@ -13,6 +13,29 @@ import { ORDERS_URL, PAYPAL_URL } from '../constants';
     }
   }
 );
+export const deleteOrder = createAsyncThunk(
+  'orders/deleteOrder',
+  async (orderId, { rejectWithValue }) => {
+    try {
+      const response = await fetch(`${ORDERS_URL}/${orderId}`, {
+        method: 'DELETE',
+        headers: {
+          // Add headers if required, like authorization headers, content-type, etc.
+        },
+      });
+
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error('Failed to delete order');
+      }
+
+      // Assuming you don't need to return any data after deletion
+      return { success: true };
+    } catch (error) {
+      return rejectWithValue(error.message || 'Failed to delete order');
+    }
+  }
+);
 export const orderApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createOrder: builder.mutation({

@@ -1,7 +1,7 @@
 const products = [
   {
     name: "JCFits Black Hoodie",
-    image: "images/black close up.png",
+    image: "images/black_extra.png",
     description: "Pre-shrunk, pill-resistant fleece, seamless body, high stitch density",
     brand: "JcFits",
     category: "lifestyle",
@@ -14,12 +14,12 @@ const products = [
     details: "black/grey/yellow hoodie with vinyl design",
     gender: "Men",
     fit: "Adult",
-    size: ["XS, S, M, L, XL"],
+    size: ["XS", "S", "M", "L", "XL"],
     material: "50% Cotton/50% Polyester",
   },
   {
     name: "JCFits FavRed",
-    image: "images/red close up .png",
+    image: "images/red_front.png",
     description: "Pre-shrunk, pill-resistant fleece, seamless body, high stitch density",
     brand: "JcFits",
     category: "lifestyle",
@@ -37,7 +37,7 @@ const products = [
   },
   {
     name: "JCFits Grey Day Hoodie",
-    image: "images/grey full view.png",
+    image: "images/grey_front.png",
     description: "Pre-shrunk, pill-resistant fleece, seamless body, high stitch density",
     brand: "JcFits",
     category: "lifestyle",
@@ -104,7 +104,7 @@ const products = [
     details: "black/grey/yellow hoodie with vinyl design",
     gender: "Men",
     fit: "Adult",
-    size: {["XS", "S", "M", "L", "XL"]},
+    size: ["XS", "S", "M", "L", "XL"],
     material: "50% Cotton/50% Polyester",
   },
    {
